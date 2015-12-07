@@ -1,6 +1,20 @@
 Parse.initialize("MKi5zI6sBQHdgFghS1JhkojJUcIoz0KBY5s7G9sB", "Uhk4zHKdGQ9OEwDzKPVhtigGsbCAIssiR6MbXxog");
 
-//var TestObject = Parse.Object.extend("TestObject");
+window.fbAsyncInit = function() {
+    Parse.FacebookUtils.init({
+      appId      : 'your-app-id',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 
 var query = new Parse.Query("TestObject");
 query.find({
