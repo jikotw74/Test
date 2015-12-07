@@ -6,26 +6,8 @@ window.fbAsyncInit = function() {
       xfbml      : true,
       version    : 'v2.5'
     });
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-var query = new Parse.Query("TestObject");
-query.find({
-	success:function(result){
-		console.log(result);
-	},
-  error: function(error) {
-    // error is an instance of Parse.Error.
-  }
-});
-
+    
 var signUp = document.getElementById('btn_signup');
 var btn_fblogin = document.getElementById('btn_fblogin');
 var account = document.getElementById('input_account');
@@ -64,4 +46,25 @@ btn_fblogin.addEventListener('click', function(){
     alert("User cancelled the Facebook login or did not fully authorize.");
   }
 });
+});
+
+    
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+var query = new Parse.Query("TestObject");
+query.find({
+	success:function(result){
+		console.log(result);
+	},
+  error: function(error) {
+    // error is an instance of Parse.Error.
+  }
 });
