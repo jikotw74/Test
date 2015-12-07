@@ -13,9 +13,10 @@ query.find({
 });
 
 var signUp = document.getElementById('btn_signup');
+var btn_fblogin = document.getElementById('btn_fblogin');
 var account = document.getElementById('input_account');
 var password = document.getElementById('input_passwd');
-console.log(signUp);
+
 signUp.addEventListener('click', function(){
 	var user = new Parse.User();
 	user.set("username", account.value);
@@ -36,3 +37,17 @@ signUp.addEventListener('click', function(){
 	});
 });
 
+btn_fblogin.addEventListener('click', function(){
+	Parse.FacebookUtils.logIn(null, {
+  success: function(user) {
+    if (!user.existed()) {
+      alert("User signed up and logged in through Facebook!");
+    } else {
+      alert("User logged in through Facebook!");
+    }
+  },
+  error: function(user, error) {
+    alert("User cancelled the Facebook login or did not fully authorize.");
+  }
+});
+});
