@@ -2,7 +2,7 @@ Parse.initialize("MKi5zI6sBQHdgFghS1JhkojJUcIoz0KBY5s7G9sB", "Uhk4zHKdGQ9OEwDzKP
 
 window.fbAsyncInit = function() {
     Parse.FacebookUtils.init({
-      appId      : 'your-app-id',
+      appId      : '202149226791962',
       xfbml      : true,
       version    : 'v2.5'
     });
